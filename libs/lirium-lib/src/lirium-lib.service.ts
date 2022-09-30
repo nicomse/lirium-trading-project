@@ -21,25 +21,25 @@ export class LiriumLibService {
             throw 'token error!'
         }
     } 
-    public createCustomer (customer: CreateCustomerDTO) {
+    public async createCustomer (customer: CreateCustomerDTO) {
         try {
             const token = this.createJWT()
-            this.httpService.post(`${process.env.LIRIUM_URL}/customers`,customer, token)    
+            await this.httpService.post(`${process.env.LIRIUM_URL}/customers`,customer, token)    
         } catch (error) {
            console.log(error) 
         }
     }
 
-    public getCustomerDetails (customer: GetCustomerDTO) {
+    public async getCustomerDetails (customer: GetCustomerDTO) {
         try {
             const token = this.createJWT()
-            this.httpService.get(`${process.env.LIRIUM_URL}/customers/${customer.customer_id}`, token)    
+            await this.httpService.get(`${process.env.LIRIUM_URL}/customers/${customer.customer_id}`, token)    
         } catch (error) {
            console.log(error) 
         }
     }
 
-    public createOrder (orderDTO: createOrderDTO) {
+    public async createOrder (orderDTO: createOrderDTO) {
         try {
             const order = {...orderDTO}
 

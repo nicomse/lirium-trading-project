@@ -1,21 +1,21 @@
-import { LiriumLibService } from '@app/lirium-lib';
+import { LiriumLibService, createOrderDTO } from '@app/lirium-lib';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
   constructor (private liriumService: LiriumLibService) {}
-  recieveOrder() {
-    return this.liriumService.createOrder({})
+  recieveOrder(recieveOrderDTO: createOrderDTO) {
+    return this.liriumService.createOrder(recieveOrderDTO)
   }
 
-  sendOrder() {
-    return this.liriumService.createOrder({})
+  sendOrder(sendOrderDTO: createOrderDTO) {
+    return this.liriumService.createOrder(sendOrderDTO)
   }
-  buyOrder() {
-    return this.liriumService.createOrder({})
+  buyOrder(buyOrderDTO: createOrderDTO) {
+    return this.liriumService.createOrder(buyOrderDTO)
   }
 
-  sellOrder() {
-    return this.liriumService.createOrder({})
+  sellOrder(sellOrderDTO: createOrderDTO) {
+    return this.liriumService.createOrder(sellOrderDTO)
   }
 }
