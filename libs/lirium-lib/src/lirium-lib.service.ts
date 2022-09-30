@@ -41,7 +41,10 @@ export class LiriumLibService {
 
     public async createOrder (orderDTO: createOrderDTO) {
         try {
+            const token = this.createJWT()
             const order = {...orderDTO}
+            order.reference_id = Date.now().toString()
+            await this.httpService.post(`${process.env.LIRIUM_URL}/customers/${orderDTO.customer_id}/orders`,order, token)    
 
         } catch (error) {
             console.log(error)

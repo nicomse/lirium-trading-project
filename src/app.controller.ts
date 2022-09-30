@@ -7,20 +7,20 @@ export class AppController {
 
   @Post()
   postRecieveOrder() {
-    return null
+    return this.appService.recieveOrder()
   }
 
   @Post()
   postSendOrder() {
-    return null
+    return this.appService.sendOrder()
   }
   @Post()
   postBuyOrder() {
-    return null
+    return this.appService.buyOrder()
   }
 
   @Post()
   postSellOrder() {
-    return null
+    return this.appService.sellOrder()
   }
 }
