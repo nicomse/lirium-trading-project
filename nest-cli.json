@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "projects": {
+    "lirium-lib": {
+      "type": "library",
+      "root": "libs/lirium-lib",
+      "entryFile": "index",
+      "sourceRoot": "libs/lirium-lib/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/lirium-lib/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}
