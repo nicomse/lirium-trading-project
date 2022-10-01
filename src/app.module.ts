@@ -5,6 +5,6 @@ import {LiriumLibService} from '@app/lirium-lib'
 @Module({
   imports: [],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, LiriumLibService],
 })
 export class AppModule {}
